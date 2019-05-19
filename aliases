@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# General Aliases
+alias l='ls -GFh'
+alias ls='ls -GFh'
+alias la='ls -A'
+alias ll='ls -l'
+alias lla='ls -la'
+
+# Git Aliases
+LOG="git log --graph --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%ar%C(reset)%C(reset)%C(bold red)%d%C(reset)%n''              %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
+alias gs='git status'
+alias ga='git add'
+alias gc='git checkout'
+alias gb='git branch'
+alias gm='git commit -m'
+alias merge='git merge'
+alias gl="$LOG -n 7"
+alias gll="$LOG --all"
+alias diff='git diff'
+alias pull='git pull'
+alias push='git push'
+
+# Docker Aliases
+alias d='docker'
+alias dc='docker-compose'
+alias dcp='docker cp'
+alias dls='docker image ls'
+alias dprune='docker system prune'
+alias dex='docker exec -it'

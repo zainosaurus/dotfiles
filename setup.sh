@@ -8,7 +8,7 @@ echo "source $(pwd)/aliases" >> ~/.bash_profile
 echo "source $(pwd)/prompt" >> ~/.bash_profile
 
 # External scripts (add to path)
-echo 'export PATH=$PATH:$(pwd)/external_scripts/' >> ~/.bash_profile
+echo "export PATH=\$PATH:$(pwd)/external_scripts/" >> ~/.bash_profile
 
 # diff-so-fancy: for easier-to-read git diffs
 git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"

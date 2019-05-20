@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Bash Aliases inspired by @PatrickDuncan's aliases: https://github.com/PatrickDuncan/bash_shell
+
 # General Aliases
 alias l='ls -GFh'
 alias ls='ls -GFh'

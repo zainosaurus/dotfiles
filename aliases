@@ -11,22 +11,20 @@ alias lla='ls -la'
 
 # Git Aliases
 LOG="git log --graph --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%ar%C(reset)%C(reset)%C(bold red)%d%C(reset)%n''              %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
+alias g='git'							&& __git_complete g _git
 alias gs='git status'
-alias ga='git add'
-alias gc='git checkout'
-alias gb='git branch'
+alias ga='git add' 				&& __git_complete ga _git_add
+alias gc='git checkout'		&& __git_complete gc _git_checkout
+alias gb='git branch'			&& __git_complete gb _git_branch
 alias gm='git commit -m'
-alias merge='git merge'
+alias gmerge='git merge'	&& __git_complete gmerge _git_merge
+alias gd='git diff'				&& __git_complete gd _git_diff
 alias gl="$LOG -n 7"
 alias gll="$LOG --all"
-alias diff='git diff'
-alias pull='git pull'
-alias push='git push'
 
 # Docker Aliases
 alias d='docker'
 alias dc='docker-compose'
-alias dcp='docker cp'
 alias dls='docker image ls'
-alias dprune='docker system prune'
+alias dprune='docker system prune -f'
 alias dex='docker exec -it'

@@ -1,0 +1,6 @@
+# ZSH configuration
+zstyle ':completion:*:*:git:*' script "$(pwd)/external_scripts/git-completion.bash"
+fpath=("$(pwd)/external_scripts" $fpath)
+autoload -Uz compinit && compinit
+
+PS1="%B%1~ %% %b";

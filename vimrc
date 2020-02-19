@@ -1,7 +1,7 @@
 " COLORS AND SYNTAX
-set background=dark	"Change this based on terminal background color
+set background=light	"Change this based on terminal background color
 syntax on
-colorscheme darkblue
+" colorscheme darkblue
 
 
 " TABS, INDENTS, AND FUNCTIONALITY

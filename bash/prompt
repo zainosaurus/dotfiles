@@ -5,23 +5,23 @@
 
 # Color Definitions for text color (tput)
     # Based on solarized color theme from https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized#the-values
-black=$(tput setaf 0);
-blue=$(tput setaf 33);
-cyan=$(tput setaf 37);
-green=$(tput setaf 64);
-orange=$(tput setaf 166);
-purple=$(tput setaf 125);
-red=$(tput setaf 124);
-violet=$(tput setaf 61);
-white=$(tput setaf 15);
-yellow=$(tput setaf 136);
+black=  $(tput setaf 0);
+blue=   $(tput setaf 33);
+cyan=   $(tput setaf 37);
+green=  $(tput setaf 64);
+orange= $(tput setaf 166);
+purple= $(tput setaf 125);
+red=    $(tput setaf 124);
+violet= $(tput setaf 61);
+white=  $(tput setaf 15);
+yellow= $(tput setaf 136);
 
-reset=$(tput sgr0);
-bold=$(tput bold);
+reset=  $(tput sgr0);
+bold=   $(tput bold);
 
 # GIT info
 git_branch() {
-    echo "($(git symbolic-ref --quiet --short HEAD 2>/dev/null))" | sed 's/()//'
+    echo "[$(git symbolic-ref --quiet --short HEAD 2>/dev/null)]" | sed 's/()//'
 }
 
 
@@ -30,6 +30,7 @@ PS1="\[${bold}${red}\]\u@\h\[${reset}\]:";   # users@host:
 PS1+="\[${bold}${yellow}\]\W";               # current folder
 PS1+="\[${green}\]\$(git_branch)";        # git info
 PS1+="\[${red}\]$ \[${reset}\]";
+
 export PS1
 
 # LS Colors

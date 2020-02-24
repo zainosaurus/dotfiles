@@ -1,7 +1,15 @@
 # ZSH configuration
 
-# Prompt Config
-PS1="%B%1~ %% %b";
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats '[%b] '
+ 
+# Set up the prompt - '(cwd) [branch] % '
+setopt PROMPT_SUBST
+PS1='%B%1~ ${vcs_info_msg_0_}%% %b';
 
 # LS Colors
 export CLICOLOR=1

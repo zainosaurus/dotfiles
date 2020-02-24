@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Bash Aliases inspired by @PatrickDuncan's aliases: https://github.com/PatrickDuncan/bash_shell
+
+# General Aliases
+alias l='ls -GFh'
+alias ls='ls -GFh'
+alias la='ls -A'
+alias ll='ls -l'
+alias lla='ls -la'
+
+# Git Aliases
+# Git Log == Configure colors based on light/dark background
+LOG="git log --graph --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(blue)%ar%C(reset)%C(red)%d%C(reset)%n''              %C(normal)%s%C(reset) %C(dim normal)- %an%C(reset)'"
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gc='git checkout'
+alias gb='git branch'
+alias gm='git commit -m'
+alias gmerge='git merge'
+alias gd='git diff'
+alias gl="$LOG -n 7"
+alias gll="$LOG --all"
+
+# Docker Aliases
+alias d='docker'
+alias dc='docker-compose'
+alias dls='docker image ls'
+alias dprune='docker system prune -f'
+alias dex='docker exec -it'

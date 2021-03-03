@@ -3,39 +3,40 @@
 # Bash Prompt Configuration (colors, style etc.)
 # Inspired by @donnemartin's bash prompt: https://github.com/donnemartin/dev-setup
 
-# Color Definitions for text color (tput)
-    # Based on solarized color theme from https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized#the-values
-black=  $(tput setaf 0);
-blue=   $(tput setaf 33);
-cyan=   $(tput setaf 37);
-green=  $(tput setaf 64);
-orange= $(tput setaf 166);
-purple= $(tput setaf 125);
-red=    $(tput setaf 124);
-violet= $(tput setaf 61);
-white=  $(tput setaf 15);
-yellow= $(tput setaf 136);
+. $(pwd)/bash/themes/system
 
-reset=  $(tput sgr0);
-bold=   $(tput bold);
+reset=$(tput sgr0);
+bold=$(tput bold);
 
 # GIT info
 git_branch() {
     echo "[$(git symbolic-ref --quiet --short HEAD 2>/dev/null)]" | sed 's/()//'
 }
 
-
 # Setting up PS1 variable
-PS1="\[${bold}${red}\]\u@\h\[${reset}\]:";   # users@host:
-PS1+="\[${bold}${yellow}\]\W";               # current folder
-PS1+="\[${green}\]\$(git_branch)";        # git info
-PS1+="\[${red}\]$ \[${reset}\]";
+PS1=""
+# PS1="\[${bold}${red}\]\u@\h\[${reset}\]:";  # users@host:
+PS1+="\[${bold}${orange}\]\w";                # current folder
+PS1+="\[${purple}\]\$(git_branch)";           # git info
+PS1+="\[${orange}\]\$ \[${reset}\]";
 
 export PS1
 
 # LS Colors
-export CLICOLOR=1
-export LSCOLORS=cxfxexdxbxegedabagacad
+if [[ "$OSTYPE" == 'linux-gnu' ]]; then 
+    # Linux
+    echo "Setting LS_COLORS for linux"
+    export LS_COLORS='di=36:ln=35:so=31:pi=33:ex=32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
+
+elif [[ "$OSTYPE" == 'darwin' ]]; then 
+    # OS X
+    echo "Setting LSCOLORS for OSX"
+    export CLICOLOR=1
+    export LSCOLORS=cxfxexdxbxegedabagacad  # For OS X
+
+else 
+    echo "OS not supported"
+fi
 
 # Prevent storing duplicates in bash history
 export HISTCONTROL=ignoreboth:erasedups

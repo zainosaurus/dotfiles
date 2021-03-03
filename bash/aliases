@@ -3,8 +3,8 @@
 # Bash Aliases inspired by @PatrickDuncan's aliases: https://github.com/PatrickDuncan/bash_shell
 
 # General Aliases
+alias ls='ls -GFh --color'
 alias l='ls -GFh'
-alias ls='ls -GFh'
 alias la='ls -A'
 alias ll='ls -l'
 alias lla='ls -la'

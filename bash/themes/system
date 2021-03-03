@@ -1,0 +1,18 @@
+#!/bin/bash
+
+black=$(tput setaf 0)
+maroon=$(tput setaf 1)
+green=$(tput setaf 2)
+olive=$(tput setaf 3)
+navy=$(tput setaf 4)
+purple=$(tput setaf 5)
+teal=$(tput setaf 6)
+silver=$(tput setaf 7)
+grey=$(tput setaf 8)
+red=$(tput setaf 9)
+lime=$(tput setaf 10)
+yellow=$(tput setaf 11)
+blue=$(tput setaf 12)
+fuchsia=$(tput setaf 13)
+aqua=$(tput setaf 14)
+white=$(tput setaf 15)
